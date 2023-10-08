@@ -7,35 +7,13 @@ function App() {
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
     console.log(searchTerm);
-
-    let items = [];
-    if (searchTerm) {
-      items = list.filter(
-        (item) =>
-          searchTerm &&
-          (item.author === searchTerm || item.title === searchTerm)
-      );
-    }
-
-    items = list.map((item) => (
-      <div key={item.objectID}>
-        <span>
-          <a href={item.url}>{item.title}</a>
-        </span>
-        <span>{item.author}</span>
-        <span>{item.num_comments}</span>
-        <span>{item.points}</span>
-      </div>
-    ));
-    console.log(items);
-    setListItems(items);
   };
 
   const getTitle = (title) => {
     return title;
   };
 
-  const list = [
+  let list = [
     {
       title: "React",
       url: "https://reactjs.org/",
@@ -53,8 +31,12 @@ function App() {
       objectID: 1,
     },
   ];
+
   const [searchTerm, setSearchTerm] = React.useState("");
-  const [listItems, setListItems] = React.useState(list);
+
+  list = list.filter((item) =>
+    item.author.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <>
@@ -71,14 +53,7 @@ function App() {
   );
 
   function getItems() {
-    let items = listItems;
-    if (searchTerm) {
-      items = listItems.filter(
-        (item) => searchTerm && item.author === searchTerm
-      );
-    }
-
-    items = items.map((item) => (
+    return list.map((item) => (
       <div key={item.objectID}>
         <span>
           <a href={item.url}>{item.title}</a>
@@ -88,7 +63,6 @@ function App() {
         <span>{item.points}</span>
       </div>
     ));
-    return items;
   }
 }
 
