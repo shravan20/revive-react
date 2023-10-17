@@ -13,6 +13,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Update README
-        uses: shravan20/aquila
+        uses: shravan20/aquila@dff91ae
         with:
           content: 'This is custom content added on every commit or merge.'
