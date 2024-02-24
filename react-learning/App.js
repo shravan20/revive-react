@@ -1,22 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const parent = React.createElement(
-    "div",
-    {
-        id: "parent"
-    },
-    [React.createElement(
-        "div",
-        { id: "children" },
-        [React.createElement("h1", {}, "I am H1 Tag"), React.createElement("h1", {}, "I am second H1 Tag")]
-    ), React.createElement(
-        "div",
-        { id: "children2" },
-        [React.createElement("h1", {}, "I am H1 Tag"), React.createElement("h1", {}, "I am second H1 Tag")]
-    )]
-);
-console.log(parent);
+
+const Header = () => {
+    return (
+        <div className="header">
+            <div className="logo-container">
+                <img src="https://cdn-icons-png.flaticon.com/128/1037/1037762.png" />
+            </div>
+
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About us</li>
+                    <li>Contact us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+
+        </div>
+    )
+}
+
+const AppLayout = () => <div className="app"><Header /></div>
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+root.render(<AppLayout />);
