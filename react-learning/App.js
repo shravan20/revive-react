@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import restaurants from './restaurants.json'
 
+const resList = restaurants
 
 const Header = () => {
     return (
@@ -22,15 +24,36 @@ const Header = () => {
     )
 }
 
-const RestroCard = () => {
+const RestroCard = (props) => {
+
+    const { resData } = props;
+
+    const {
+        cloudinaryImageId,
+        name,
+        avgRating,
+        cuisines,
+        costForTwo,
+        deliveryTime,
+    } = resData?.data;
+
     return (
-        <div className="res-card">
-            <img className="res-logo" src="https://cdn-icons-png.flaticon.com/128/13108/13108611.png" />
-            <h3 style={{ "color": "red" }}>Meghana Foods</h3>
-            <h4 >Biriyani, North India, Asian</h4>
-            <h4 >4.4 stars</h4>
+        <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+            <img
+                className="res-logo"
+                alt="res-logo"
+                src={
+                    "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+                    cloudinaryImageId
+                }
+            />
+            <h3>{name}</h3>
+            <h4>{cuisines.join(", ")}</h4>
+            <h4>{avgRating} stars</h4>
+            <h4>₹{costForTwo / 100} FOR TWO</h4>
+            <h4>{deliveryTime} minutes</h4>
         </div>
-    )
+    );
 }
 
 const Body = () => {
@@ -38,11 +61,9 @@ const Body = () => {
         <div className="body">
             <div className="search">Search</div>
             <div className="restro-container">
-                <RestroCard />
-                <RestroCard />
-                <RestroCard />
-                <RestroCard />
-                <RestroCard />
+                {resList.map((restaurant) => (
+                    <RestroCard key={restaurant.data.id} resData={restaurant} />
+                ))}
             </div>
         </div>
     )
