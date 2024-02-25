@@ -39,6 +39,10 @@ const Body = () => {
             <div className="search">Search</div>
             <div className="restro-container">
                 <RestroCard />
+                <RestroCard />
+                <RestroCard />
+                <RestroCard />
+                <RestroCard />
             </div>
         </div>
     )
