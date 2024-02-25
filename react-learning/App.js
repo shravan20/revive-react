@@ -22,7 +22,27 @@ const Header = () => {
     )
 }
 
-const AppLayout = () => <div className="app"><Header /></div>
+const RestroCard = () => {
+    return (
+        <div className="res-card">
+            <h3>Meghana Foods</h3>
+        </div>
+    )
+}
+
+const Body = () => {
+    return (
+        <div className="body">
+            <div className="search">Search</div>
+            <div className="restro-container">
+                <RestroCard />
+            </div>
+        </div>
+    )
+}
+
+
+const AppLayout = () => <div className="app"><Header /><Body /></div>
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
