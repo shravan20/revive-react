@@ -1,3 +1,7 @@
+body {
+  background-color: #015c4b;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
