@@ -25,7 +25,10 @@ const Header = () => {
 const RestroCard = () => {
     return (
         <div className="res-card">
-            <h3>Meghana Foods</h3>
+            <img className="res-logo" src="https://cdn-icons-png.flaticon.com/128/13108/13108611.png" />
+            <h3 style={{ "color": "red" }}>Meghana Foods</h3>
+            <h4 >Biriyani, North India, Asian</h4>
+            <h4 >4.4 stars</h4>
         </div>
     )
 }
