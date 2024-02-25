@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../react-vite-learning/node_modules/@types/react';
 import { RestroCard } from './RestroCard';
 import { resList } from '../App';
 
