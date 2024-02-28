@@ -1,15 +1,24 @@
-import React from '../../../react-vite-learning/node_modules/@types/react';
-import { RestroCard } from './RestroCard';
-import { resList } from '../App';
+import React from "react";
+import RestroCard from "./RestroCard";
+import { restaurants } from "../restaurants";
 
-export const Body = () => {
+export default Body = () => {
     return (
         <div className="body">
-            <div className="search">Search</div>
+            <div className="filter">
+                <button
+                    className="filter-btn"
+                    onClick={() => {
+                        console.log("Clicked");
+                    }}
+                >
+                    Top Rated button
+                </button>
+            </div>
             <div className="restro-container">
-                {resList.map((restaurant) => (
+                {restaurants.map(restaurant =>
                     <RestroCard key={restaurant.data.id} resData={restaurant} />
-                ))}
+                )}
             </div>
         </div>
     );

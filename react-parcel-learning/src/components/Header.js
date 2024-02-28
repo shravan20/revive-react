@@ -1,6 +1,6 @@
-import React from '../../../react-vite-learning/node_modules/@types/react';
+import React from 'react';
 
-export const Header = () => {
+export default Header = () => {
     return (
         <div className="header">
             <div className="logo-container">

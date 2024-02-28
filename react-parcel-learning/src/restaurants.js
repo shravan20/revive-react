@@ -1,4 +1,4 @@
-[
+export const restaurants = [
   {
     "type": "restaurant",
     "data": {

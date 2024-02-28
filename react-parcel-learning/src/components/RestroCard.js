@@ -1,6 +1,6 @@
-import React from '../../../react-vite-learning/node_modules/@types/react';
+import React from 'react';
 
-export const RestroCard = (props) => {
+export default RestroCard = (props) => {
 
     const { resData } = props;
 

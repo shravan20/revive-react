@@ -1,5 +1,5 @@
-import React from '../../../react-vite-learning/node_modules/@types/react';
-import { Header } from './Header';
-import { Body } from './Body';
+import React from 'react';
+import Header from './Header';
+import Body from './Body';
 
-export const AppLayout = () => <div className="app"><Header /><Body /></div>;
+export default AppLayout = () => <div className="app"><Header /><Body /></div>
