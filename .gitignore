@@ -39,3 +39,6 @@ packages/react-devtools-timeline/dist
 .parcel-cache/**
 
 **/**/.dist
+
+**/**/dist
+**/**/.parcel-cache
