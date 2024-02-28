@@ -1,22 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import RestroCard from "./RestroCard";
 import { restaurants } from "../restaurants";
 
 export default Body = () => {
+
+    // Normal JS Variable
+    // let items = restaurants;
+
+    // State Variable
+    const [items, setItems] = useState(restaurants);
+
+
     return (
         <div className="body">
             <div className="filter">
                 <button
                     className="filter-btn"
-                    onClick={() => {
-                        console.log("Clicked");
+                    onMouseEnter={() => {
+                        console.log("onmouseover")
+                        setItems(items.filter(res => res.data.avgRating > 4))
+                    }}
+                    onMouseLeave={() => {
+                        setItems(restaurants)
                     }}
                 >
-                    Top Rated button
+                    Top Rated Restaurants
                 </button>
             </div>
             <div className="restro-container">
-                {restaurants.map(restaurant =>
+                {items.map(restaurant =>
                     <RestroCard key={restaurant.data.id} resData={restaurant} />
                 )}
             </div>
