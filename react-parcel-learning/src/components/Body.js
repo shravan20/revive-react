@@ -20,7 +20,7 @@ export default Body = () => {
         });
         setItems(data);
 
-        // console.log(data)
+        console.log(data)
 
     }
 
